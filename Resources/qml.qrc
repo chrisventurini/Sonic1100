@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>NativeUi/main.qml</file>
+        <file>WebUi/index.html</file>
+        <file>WebUi/test.js</file>
     </qresource>
 </RCC>

@@ -1,20 +1,24 @@
-﻿#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+﻿#include <qapplication.h>
+#include <qwebchannel.h>
+#include <qwebengineview.h>
 #include <qtwebengineglobal.h>
+#include <QWebEngineView>
 
+#include "WebManager.h"
 
 int main(int argc, char *argv[])
 {
-	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QApplication app(argc, argv);
 
-	QGuiApplication app(argc, argv);
+	QWebChannel webChannel;
+	WebManager webManager;
+	webChannel.registerObject("manager", &webManager);
 
-	QtWebEngine::initialize();
-
-	QQmlApplicationEngine engine;
-	engine.load(QUrl(QStringLiteral("qrc:/NativeUi/main.qml")));
-
-	if (engine.rootObjects().isEmpty()) { return -1; };
+	QWebEngineView webView;
+	webView.setUrl(QUrl(QStringLiteral("qrc:/WebUi/index.html")));
+	webView.page()->setWebChannel(&webChannel);
+	webView.show();
 
 	return app.exec();
 }
