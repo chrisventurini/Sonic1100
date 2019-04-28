@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>WebUi/index.html</file>
+        <file>WebUi/test.js</file>
+    </qresource>
+</RCC>
