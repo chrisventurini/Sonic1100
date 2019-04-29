@@ -1,13 +1,11 @@
 #include "WebManager.h"
 
-#include <iostream>
-
-using std::cout;
-using std::endl;
-
 WebManager::WebManager(std::unique_ptr<PythonProcessor> pyProcessor)
 {
-	if (pyProcessor == nullptr) { pyProcessor_ = std::make_unique<PythonProcessor>(); }
+	if (pyProcessor == nullptr)
+	{
+		pyProcessor_ = std::make_unique<PythonProcessor>();
+	}
 }
 
 void WebManager::executeCode(const QString pyCode)
