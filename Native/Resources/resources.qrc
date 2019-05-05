@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>WebUi/index.html</file>
-        <file>WebUi/test.js</file>
+        <file>WebUi/app.bundle.js</file>
     </qresource>
 </RCC>

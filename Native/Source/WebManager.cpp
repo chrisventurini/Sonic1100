@@ -1,5 +1,7 @@
 #include "WebManager.h"
 
+#include "Python\PythonProcessor.h"
+
 WebManager::WebManager(std::unique_ptr<PythonProcessor> pyProcessor)
 {
 	if (pyProcessor == nullptr)
@@ -8,12 +10,19 @@ WebManager::WebManager(std::unique_ptr<PythonProcessor> pyProcessor)
 	}
 }
 
-void WebManager::executeCode(const QString pyCode)
+QString WebManager::play(const QString& pyCode)
 {
-	pyProcessor_.get()->Process(pyCode.toStdString());
+	std::string codeInstanceId = pyProcessor_.get()->Run(pyCode.toStdString(), true);
+
+	return QString::fromStdString(codeInstanceId);
 }
 
-void WebManager::setVariable(const QString value)
+void WebManager::stop(const QString& sessionId)
+{
+	pyProcessor_.get()->Stop(sessionId.toStdString());
+}
+
+void WebManager::setVariable(const QString& value)
 {
 	pyProcessor_.get()->SetValue(value.toStdString());
 }

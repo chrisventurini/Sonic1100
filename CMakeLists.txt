@@ -12,6 +12,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_MSVCIDE_RUN_PATH "./Native/3rdParty/Python/3.7.3/libs/amd64")
 
+add_subdirectory("Web")
+
 find_package(Qt5 COMPONENTS Core WebEngine WebEngineCore WebChannel WebEngineWidgets REQUIRED)
 
 include_directories(
@@ -31,3 +33,5 @@ add_executable (${PROJECT_NAME} ${NATIVE_SOURCE} "./Native/Resources/resources.q
 
 # TODO: Add tests and install targets if needed.
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::WebEngine Qt5::WebChannel Qt5::WebEngineWidgets Qt5::WebEngineCore)
+
+ADD_DEPENDENCIES(${PROJECT_NAME} GENERATE_WEB_UI)

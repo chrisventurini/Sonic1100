@@ -1,0 +1,19 @@
+cmake_minimum_required (VERSION 3.8)
+
+set(WEB_APP_JS_FILENAME app.bundle.js)
+set(WEB_APP_JS_DESTINATION ${CMAKE_SOURCE_DIR}/Native/Resources/WebUi/)
+set(WEB_APP_JS_BUILD_PATH ${CMAKE_SOURCE_DIR}/Web/Build/${WEB_APP_JS_FILENAME})
+
+file (GLOB_RECURSE WEB_SOURCE "./Source/*.*")
+
+add_custom_command(
+	OUTPUT ${WEB_APP_JS_BUILD_PATH}
+	COMMAND cmd /c npm run build
+	COMMAND ${CMAKE_COMMAND} -E copy ${WEB_APP_JS_BUILD_PATH} ${WEB_APP_JS_DESTINATION}
+	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/Web
+	DEPENDS ${WEB_SOURCE}
+)
+
+add_custom_target(GENERATE_WEB_UI ALL
+   DEPENDS ${WEB_APP_JS_BUILD_PATH} 
+)
