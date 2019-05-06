@@ -94,7 +94,55 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (state) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"App\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h1\", null, \" Testing 123 \"));\n});\n\n//# sourceURL=webpack:///./Source/Components/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Sessions_SessionEditorContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sessions/SessionEditorContainer */ \"./Source/Components/Sessions/SessionEditorContainer.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (state) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"App\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sessions_SessionEditorContainer__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n});\n\n//# sourceURL=webpack:///./Source/Components/App.js?");
+
+/***/ }),
+
+/***/ "./Source/Components/Sessions/SessionEditor.js":
+/*!*****************************************************!*\
+  !*** ./Source/Components/Sessions/SessionEditor.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Session\");\n});\n\n//# sourceURL=webpack:///./Source/Components/Sessions/SessionEditor.js?");
+
+/***/ }),
+
+/***/ "./Source/Components/Sessions/SessionEditorContainer.js":
+/*!**************************************************************!*\
+  !*** ./Source/Components/Sessions/SessionEditorContainer.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _Store_Actions_Sessions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Store/Actions/Sessions */ \"./Source/Store/Actions/Sessions/index.js\");\n/* harmony import */ var _SessionEditor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SessionEditor */ \"./Source/Components/Sessions/SessionEditor.js\");\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\n\n\n\n\nvar SessionEditorContainer =\n/*#__PURE__*/\nfunction (_Component) {\n  _inherits(SessionEditorContainer, _Component);\n\n  function SessionEditorContainer() {\n    var _getPrototypeOf2;\n\n    var _this;\n\n    _classCallCheck(this, SessionEditorContainer);\n\n    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {\n      args[_key] = arguments[_key];\n    }\n\n    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SessionEditorContainer)).call.apply(_getPrototypeOf2, [this].concat(args)));\n\n    _defineProperty(_assertThisInitialized(_this), \"state\", {\n      sessionId: undefined\n    });\n\n    return _this;\n  }\n\n  _createClass(SessionEditorContainer, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {\n      this.props.actions.newSessionInitiated();\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SessionEditor__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null);\n    }\n  }]);\n\n  return SessionEditorContainer;\n}(react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"]);\n\n_defineProperty(SessionEditorContainer, \"propTypes\", {});\n\n;\n\nvar mapState = function mapState(state) {\n  return state;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapState, _Store_Actions_Sessions__WEBPACK_IMPORTED_MODULE_3__[\"mapDispatchToSessionActions\"])(SessionEditorContainer));\n\n//# sourceURL=webpack:///./Source/Components/Sessions/SessionEditorContainer.js?");
+
+/***/ }),
+
+/***/ "./Source/Store/Actions/Sessions/index.js":
+/*!************************************************!*\
+  !*** ./Source/Store/Actions/Sessions/index.js ***!
+  \************************************************/
+/*! exports provided: actions, actionTypes, mapDispatchToSessionActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"actions\", function() { return actions; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"actionTypes\", function() { return actionTypes; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mapDispatchToSessionActions\", function() { return mapDispatchToSessionActions; });\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _newSessionInitiated__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newSessionInitiated */ \"./Source/Store/Actions/Sessions/newSessionInitiated.js\");\n\n\nvar actions = {\n  newSessionInitiated: _newSessionInitiated__WEBPACK_IMPORTED_MODULE_1__[\"newSessionInitiated\"]\n};\nvar actionTypes = {\n  NEW_SESSION_INITIATED: _newSessionInitiated__WEBPACK_IMPORTED_MODULE_1__[\"NEW_SESSION_INITIATED\"]\n};\nvar mapDispatchToSessionActions = function mapDispatchToSessionActions(dispatch) {\n  return {\n    actions: Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"bindActionCreators\"])(actions, dispatch)\n  };\n};\n\n//# sourceURL=webpack:///./Source/Store/Actions/Sessions/index.js?");
+
+/***/ }),
+
+/***/ "./Source/Store/Actions/Sessions/newSessionInitiated.js":
+/*!**************************************************************!*\
+  !*** ./Source/Store/Actions/Sessions/newSessionInitiated.js ***!
+  \**************************************************************/
+/*! exports provided: NEW_SESSION_INITIATED, newSessionInitiated */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"NEW_SESSION_INITIATED\", function() { return NEW_SESSION_INITIATED; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"newSessionInitiated\", function() { return newSessionInitiated; });\nvar NEW_SESSION_INITIATED = 'NEW_SESSION_INITIATED';\nvar newSessionInitiated = function newSessionInitiated() {\n  return {\n    type: NEW_SESSION_INITIATED\n  };\n};\n\n//# sourceURL=webpack:///./Source/Store/Actions/Sessions/newSessionInitiated.js?");
 
 /***/ }),
 
