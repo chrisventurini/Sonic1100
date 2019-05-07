@@ -10,6 +10,13 @@ WebManager::WebManager(std::unique_ptr<PythonProcessor> pyProcessor)
 	}
 }
 
+QString WebManager::createSession()
+{
+	std::string sessionId = pyProcessor_.get()->CreateSession();
+
+	return QString::fromStdString(sessionId);
+}
+
 QString WebManager::play(const QString& pyCode)
 {
 	std::string codeInstanceId = pyProcessor_.get()->Run(pyCode.toStdString(), true);

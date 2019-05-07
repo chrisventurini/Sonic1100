@@ -27,6 +27,11 @@ PythonProcessor::~PythonProcessor()
 	Py_FinalizeEx();
 }
 
+std::string PythonProcessor::CreateSession()
+{
+	return Utils::generateId();
+}
+
 std::string PythonProcessor::Run(const string& pyCode, const bool repeat)
 {
 	const string sessionId = Utils::generateId();
