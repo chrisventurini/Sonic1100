@@ -1,10 +1,13 @@
 import React from "react";
-import SessionEditorContainer from './Sessions/SessionEditorContainer';
 
-export default (state) => {
+import MenuBar from './MenuBar';
+import Sessions from './Sessions';
+
+export default () => {
     return (
         <div className="App">
-            <SessionEditorContainer />
+            <MenuBar />
+            <Sessions />
         </div>
     );
 };

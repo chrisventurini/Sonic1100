@@ -6,10 +6,10 @@ export default (state = defaultState.sessions, data) => {
 
     switch (data.type) {
     	case actionTypes.NEW_SESSION_CREATED:
-            console.log(data.sessionId);
-    		newState = state.slice(0);
+            newState = state.slice(0);
     		newState.push(data.sessionId);
-    	default:
+            break;
+        default:
             newState = state;
     }
 
