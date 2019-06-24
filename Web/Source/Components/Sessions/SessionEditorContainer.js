@@ -16,12 +16,33 @@ class SessionEditorContainer extends Component {
         sessionId: undefined 
     };
 
-    render() {
-        return (
-            <SessionEditor sessionId={this.props.sessionId}/>
-        );
+    constructor(props) {
+        super(props);
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleInputChange({target}) {
+        let { value, name } = target
+
+        this.setState({
+            ...this.state,
+            [name]: value
+        });
+    }
+    
+    handleSubmit(event) {
+        event.preventDefault();
+
+        //TODO: Build redux actions to submit code
+    }
+
+    render() {
+        return (
+            <SessionEditor onInputChange={this.handleInputChange} onSubmit={this.handleSubmit} />
+        );
+    }
 };
 
 const mapState = () => {

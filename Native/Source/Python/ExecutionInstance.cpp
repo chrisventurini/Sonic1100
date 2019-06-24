@@ -2,8 +2,10 @@
 
 #include <Python.h>
 
-ExecutionInstance::ExecutionInstance(std::string instanceId, const std::string pyCode, bool repeat)
-	: id_(instanceId), pyCode_(pyCode), run_(repeat)
+#include "../Utils/generateId.h"
+
+ExecutionInstance::ExecutionInstance()
+	: id_(Utils::generateId())
 {
 }
 
@@ -14,6 +16,11 @@ ExecutionInstance::~ExecutionInstance()
 	Stop();
 
 	thread_.get()->join();
+}
+
+std::string ExecutionInstance::GetId() const
+{
+	return id_;
 }
 
 void ExecutionInstance::Run()

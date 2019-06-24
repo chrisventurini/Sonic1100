@@ -1,6 +1,5 @@
 #include "PythonProcessor.h"
 #include <memory>
-#include "../Utils/generateId.h"
 
 using std::string;
 
@@ -29,18 +28,17 @@ PythonProcessor::~PythonProcessor()
 
 std::string PythonProcessor::CreateSession()
 {
-	return Utils::generateId();
+	auto executionSession = std::make_unique<ExecutionInstance>();
+
+	string newSessionId = executionSession->GetId();
+
+	executionInstances_.insert({ newSessionId, std::move(executionSession) });
+
+	return newSessionId;
 }
 
-std::string PythonProcessor::Run(const string& pyCode, const bool repeat)
+void PythonProcessor::Run(const string& sessionId, const string& pyCode, const bool repeat)
 {
-	const string sessionId = Utils::generateId();
-
-	executionInstances_[sessionId] = std::make_unique<ExecutionInstance>(sessionId, pyCode, repeat);
-	
-	executionInstances_[sessionId].get()->Run();
-
-	return sessionId;
 }
 
 void PythonProcessor::Stop(const string& sessionId)

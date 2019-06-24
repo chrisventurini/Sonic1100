@@ -6,8 +6,9 @@
 class ExecutionInstance
 {
 public:
-	explicit ExecutionInstance(std::string instanceId, const std::string pyCode, bool repeat); 
+	ExecutionInstance(); 
 	~ExecutionInstance();
+	std::string GetId() const;
 	void Run();
 	void Stop();
 

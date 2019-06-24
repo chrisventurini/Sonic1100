@@ -17,7 +17,7 @@ public:
 	~PythonProcessor();
 
 	std::string CreateSession();
-	std::string Run(const std::string& pythonCode, const bool repeat);
+	void Run(const std::string& sessionId, const std::string& pythonCode, const bool repeat);
 	void Stop(const std::string& sessionId);
 	void SetValue(const std::string& value);
 

@@ -17,11 +17,9 @@ QString WebManager::createSession()
 	return QString::fromStdString(sessionId);
 }
 
-QString WebManager::play(const QString& pyCode)
+void WebManager::play(const QString& sessionId, const QString& pyCode)
 {
-	std::string codeInstanceId = pyProcessor_.get()->Run(pyCode.toStdString(), true);
-
-	return QString::fromStdString(codeInstanceId);
+	pyProcessor_.get()->Run(sessionId.toStdString(),pyCode.toStdString(), true);
 }
 
 void WebManager::stop(const QString& sessionId)

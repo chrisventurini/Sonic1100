@@ -14,7 +14,7 @@ public:
 
 public Q_SLOTS:
 	QString createSession();
-	QString play(const QString& pyCode);
+	void play(const QString& sessionId, const QString& pyCode);
 	void stop(const QString& sessionId);
 	void setVariable(const QString& value);
 

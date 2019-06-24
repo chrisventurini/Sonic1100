@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default (props) => {
+export default ({onInputChange, onSubmit}) => {
     return (
-        <div>
-            Session
-        </div>
+        <form onSubmit={onSubmit}>
+            <textarea name="pyCode" onChange={onInputChange} /> 
+            <button type="submit">Play</button>
+        </form>
     )
 };
