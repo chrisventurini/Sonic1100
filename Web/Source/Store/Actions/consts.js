@@ -1,0 +1,4 @@
+export default {
+    ASYNC_COMPLETED: 'ASYNC_COMPLETED',
+    ASYNC_STARTED: 'ASYNC_STARTED'
+}

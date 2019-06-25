@@ -23,7 +23,7 @@ std::string ExecutionInstance::GetId() const
 	return id_;
 }
 
-void ExecutionInstance::Run()
+void ExecutionInstance::Play(const std::string& pyCode)
 {
 	thread_ = std::make_unique<std::thread>([&]()
 	{
@@ -31,15 +31,15 @@ void ExecutionInstance::Run()
 		{
 			const PyGILState_STATE gilState = PyGILState_Ensure();
 
-			PyRun_SimpleString(pyCode_.c_str());
+			PyRun_SimpleString(pyCode.c_str());
 
 			PyGILState_Release(gilState);
 
-		} while (run_);
+		} while (repeat_);
 	});
 }
 
 void ExecutionInstance::Stop()
 {
-	run_ = false;
+	repeat_ = false;
 }

@@ -24,7 +24,7 @@ class SessionEditorContainer extends Component {
     }
 
     handleInputChange({target}) {
-        let { value, name } = target
+        let { name, value } = target;
 
         this.setState({
             ...this.state,
@@ -35,7 +35,7 @@ class SessionEditorContainer extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        //TODO: Build redux actions to submit code
+        this.props.actions.sessionPlayCode(this.props.sessionId, this.state.pythonCode);
     }
 
     render() {

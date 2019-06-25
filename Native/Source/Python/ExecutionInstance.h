@@ -9,12 +9,11 @@ public:
 	ExecutionInstance(); 
 	~ExecutionInstance();
 	std::string GetId() const;
-	void Run();
+	void Play(const std::string& pyCode);
 	void Stop();
 
 private:
 	std::string id_;
-	std::string pyCode_;
-	bool run_ = false;
+	bool repeat_ = false;
 	std::unique_ptr<std::thread> thread_ = nullptr;
 };

@@ -37,8 +37,9 @@ std::string PythonProcessor::CreateSession()
 	return newSessionId;
 }
 
-void PythonProcessor::Run(const string& sessionId, const string& pyCode, const bool repeat)
+void PythonProcessor::Play(const string& sessionId, const string& pyCode, const bool repeat)
 {
+	executionInstances_[sessionId].get()->Play(pyCode);
 }
 
 void PythonProcessor::Stop(const string& sessionId)

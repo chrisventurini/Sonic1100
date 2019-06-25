@@ -7,5 +7,11 @@ export default {
                 resolve(sessionId); 
             });
         });
+    },
+
+    playCode: async (sessionId, pythonCode) => {
+        return new Promise(resolve => {
+            commChannel.objects.manager.playCode(sessionId, pythonCode);
+        })
     }
 };

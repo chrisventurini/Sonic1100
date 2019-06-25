@@ -17,12 +17,12 @@ QString WebManager::createSession()
 	return QString::fromStdString(sessionId);
 }
 
-void WebManager::play(const QString& sessionId, const QString& pyCode)
+void WebManager::playCode(const QString& sessionId, const QString& pyCode)
 {
-	pyProcessor_.get()->Run(sessionId.toStdString(),pyCode.toStdString(), true);
+	pyProcessor_.get()->Play(sessionId.toStdString(),pyCode.toStdString(), false);
 }
 
-void WebManager::stop(const QString& sessionId)
+void WebManager::stopCode(const QString& sessionId)
 {
 	pyProcessor_.get()->Stop(sessionId.toStdString());
 }
